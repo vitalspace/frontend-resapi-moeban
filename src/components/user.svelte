@@ -2,7 +2,6 @@
   export let id: number;
   export let img: string;
   export let name: string;
-  export let occupation: string;
   export let bio: string;
 </script>
 
@@ -17,7 +16,6 @@
       </div>
     </div>
     <h2>name: {name}</h2>
-    <p>occupation: {occupation}</p>
     <p>
       bio: {bio}
     </p>
