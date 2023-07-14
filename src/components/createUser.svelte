@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { createUserEndPoint } from "../lib/createUser";
   import { isOpen, users } from "../stores/stores";
   const closeModal = () => ($isOpen = false);
 
@@ -7,12 +8,14 @@
   let email: string;
   let bio: string;
 
-  import { createUserEndPoint } from "../lib/createUser";
-
   const createUser = async () => {
+    const patron = /^[\w\.-]+@[\w\.-]+\.\w+$/;
+    if (!patron.test(email)) {
+      alert("Esto no es un email");
+      return;
+    }
     if (!name || !img || !email || !bio) {
-      alert("WTF CHAVAL");
-      $isOpen = false;
+      alert("All data must be completed");
       return;
     }
 
