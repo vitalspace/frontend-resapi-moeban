@@ -1,8 +1,11 @@
 <script lang="ts">
   import CreateUser from "./components/createUser.svelte";
+  import DeleteUser from "./components/deleteUser.svelte";
+
   import User from "./components/user.svelte";
   import { getUsers } from "./lib/users";
-  import { isOpen, users } from "./stores/stores";
+  import { isOpen, users, isOpenModalDeleteUser } from "./stores/stores";
+
   getUsers().then((res) => ($users = res));
   const openModal = () => ($isOpen = !$isOpen);
 </script>
@@ -44,4 +47,8 @@
 
 {#if $isOpen}
   <CreateUser />
+{/if}
+
+{#if $isOpenModalDeleteUser} 
+  <DeleteUser/>
 {/if}

@@ -1,11 +1,14 @@
 <script lang="ts">
+  import { isOpenModalDeleteUser, deleUserId } from "../stores/stores";
+
   export let id: number;
   export let img: string;
   export let name: string;
   export let bio: string;
 
   const deleteUser = async (id) => {
-    alert(id);
+    $isOpenModalDeleteUser = !$isOpenModalDeleteUser;
+    $deleUserId = id;
   };
 
   const updateUser = async (id) => {
@@ -34,3 +37,4 @@
     </p>
   </div>
 </div>
+

@@ -1,4 +1,4 @@
-import { api } from "../utils/api";
+import { api } from "../utils/contants";
 const endPoint: string = "api/users";
 const getUsers = async () => {
     try {

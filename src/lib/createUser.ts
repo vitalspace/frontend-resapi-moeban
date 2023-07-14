@@ -1,5 +1,5 @@
 const endPoint: string = "api/createuser";
-import { api } from "../utils/api";
+import { api } from "../utils/contants";
 
 interface UserData {
   name: string
